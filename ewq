@@ -1,9 +1,11 @@
+--This script was obtained from https://easyexploits.com
+-- // Configurations \\ --
 _G.Configurations = {
-    -- tuslar
+    -- KeyBinds --
     ToggleKeyBind = Enum.KeyCode.H,
     PredictionKeyBind = Enum.KeyCode.J;
 
-    --fov büyüklügü
+    -- Settings --
     FOV = 250;
 
     -- Filters --
@@ -12,13 +14,14 @@ _G.Configurations = {
     };
     FilterType = "Whitelist";
 
-    -- aimbot sensi --
+    -- Aimbot sensitivity --
     Gyro = {
-        Power = 15000,                  
-        Dampening = 0,                  
+        Power = 15000,                  -- Higher the number, the faster you will spin.
+        Dampening = 0,                  -- The lower it is, the more it will look "snappy"
     };
 }
-
+-- // Constants \\ --
+-- [ Services ] --
 local Services = setmetatable({}, {__index = function(Self, Index)
     local NewService = game:GetService(Index)
     if NewService then
@@ -45,7 +48,7 @@ local FOVCircle = Drawing.new("Circle", {
     Radius = _G.Configurations.FOV
 })
 
-local Target = Drawing.new("Circle", {
+local Target = Drawing.new("Triangle", {
     Thickness = 5,
     Color = Color3.fromRGB(0, 200, 255)
 })
